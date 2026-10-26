@@ -1,17 +1,21 @@
 const PhotoCard = ({ photo, isFavourite = false, onToggleFavourite }) => {
     return (
-        <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg">
+        <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0">
             <div className="aspect-4/3 overflow-hidden bg-slate-100">
                 <img
                     src={`https://picsum.photos/id/${photo.id}/600/400`}
                     alt={`Photo by ${photo.author}`}
                     loading="lazy"
-                    className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                    decoding="async"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
             </div>
 
-            <div className="flex items-center justify-between gap-3 px-4 py-3.5">
-                <p className="min-w-0 truncate text-sm font-medium text-slate-800">
+            <div className="flex items-center justify-between gap-3 px-4 py-3">
+                <p
+                    title={photo.author}
+                    className="min-w-0 truncate text-sm font-medium text-slate-700"
+                >
                     {photo.author}
                 </p>
 
@@ -24,10 +28,10 @@ const PhotoCard = ({ photo, isFavourite = false, onToggleFavourite }) => {
                             ? `Remove photo by ${photo.author} from favourites`
                             : `Add photo by ${photo.author} to favourites`
                     }
-                    className={`grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:outline-none ${
+                    className={`grid h-10 w-10 shrink-0 cursor-pointer place-items-center rounded-full transition duration-150 hover:scale-110 active:scale-95 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:scale-100 ${
                         isFavourite
                             ? 'bg-rose-50 text-rose-500'
-                            : 'text-slate-400 hover:bg-slate-100 hover:text-rose-500'
+                            : 'text-slate-500 hover:bg-slate-100 hover:text-rose-500'
                     }`}
                 >
                     <svg

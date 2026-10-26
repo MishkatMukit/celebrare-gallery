@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 plan.md
 AGENTS.md
+dist
+.vercel
+explanation.md

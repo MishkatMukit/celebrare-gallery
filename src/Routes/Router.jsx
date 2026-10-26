@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     },
     {
         path: '*',
-        component: Error,
+        Component: Error,
     }
 ])
 

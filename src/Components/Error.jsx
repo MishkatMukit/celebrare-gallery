@@ -1,6 +1,4 @@
 import { Link } from "react-router";
-
-// Without a message it is the 404 page; with one it reports a failed request.
 const Error = ({ message }) => {
     if (message) {
         return (

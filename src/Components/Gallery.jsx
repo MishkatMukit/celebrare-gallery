@@ -21,7 +21,9 @@ function loadFavourites() {
 function Gallery() {
 
   const { photos, loading, error } = useFetchPhotos();
+
   const [favourites, dispatch] = useReducer(favouritesReducer,[],loadFavourites);
+  
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {

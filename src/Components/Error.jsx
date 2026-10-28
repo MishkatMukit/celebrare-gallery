@@ -1,6 +1,24 @@
 import { Link } from "react-router";
 
-const Error = () => {
+// Without a message it is the 404 page; with one it reports a failed request.
+const Error = ({ message }) => {
+    if (message) {
+        return (
+            <div
+                role="alert"
+                className="mx-auto max-w-lg rounded-xl border border-red-200 bg-red-50 px-6 py-10 text-center"
+            >
+                <h2 className="text-lg font-semibold text-red-800">
+                    Couldn&apos;t load photos
+                </h2>
+                <p className="mt-2 text-sm text-red-700">{message}</p>
+                <p className="mt-1 text-sm text-red-600">
+                    Refresh the page to try again.
+                </p>
+            </div>
+        );
+    }
+
     return (
         <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4 text-center">
             <h1 className="text-6xl font-bold text-indigo-600">404</h1>

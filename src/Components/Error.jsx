@@ -29,7 +29,7 @@ const Error = ({ message }) => {
                 Sorry, the page you are looking for does not exist.
             </p>
             <Link to="/"><button className="mt-6 rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700">
-                Go Back Home
+                Back to Home
             </button></Link>
             
         </div>
